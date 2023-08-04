@@ -1,6 +1,6 @@
 SHELL := bash
 
-export CLASSPATH=$(PWD)/target/classes
+export CLASSPATH ?= $(PWD)/target/classes
 
 TEST_FILE_1 := Cons.java
 TEST_URL_1 := https://raw.githubusercontent.com/clojure/clojure/clojure-1.11.1/src/jvm/clojure/lang/$(TEST_FILE_1)

@@ -39,18 +39,8 @@ public class App {
         Yaml yaml = new Yaml(dumperOptions);
         String yamlString = yaml.dump(compilationUnit);
 
-        // Write the YAML to a file
-        String yamlFilePath = "path/to/yaml/file.yaml";
-        File yamlFile = new File(yamlFilePath);
-        File yamlFileParent = yamlFile.getParentFile();
-
-        if (!yamlFileParent.exists()) {
-            yamlFileParent.mkdirs();
-        }
-
-        FileWriter writer = new FileWriter(yamlFile);
-        writer.write(yamlString);
-        writer.close();
+        // Write the YAML to stdout
+        System.out.println(yamlString);
     }
 
     private static String readFile(String filePath) throws IOException {
