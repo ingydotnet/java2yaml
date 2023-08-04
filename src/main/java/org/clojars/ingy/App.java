@@ -41,7 +41,14 @@ public class App {
 
         // Write the YAML to a file
         String yamlFilePath = "path/to/yaml/file.yaml";
-        FileWriter writer = new FileWriter(new File(yamlFilePath));
+        File yamlFile = new File(yamlFilePath);
+        File yamlFileParent = yamlFile.getParentFile();
+
+        if (!yamlFileParent.exists()) {
+            yamlFileParent.mkdirs();
+        }
+
+        FileWriter writer = new FileWriter(yamlFile);
         writer.write(yamlString);
         writer.close();
     }
